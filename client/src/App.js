@@ -2,10 +2,14 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import Search from './components/Search';
+import Post from './components/Post';
+import Form from './components/Form';
 
 function App() {
   const [posts, setPosts] = useState([]);
   const [search, setSearch] = useState('');
+  const [showForm, setShowForm] = useState(false);
+  const [selectedPost, setSelectedPost] = useState(null);
 
   useEffect(() => {
     async function getPosts() {
@@ -16,6 +20,24 @@ function App() {
     getPosts();
   }, []);
 
+  const handleShowForm = (postId) => {
+    setShowForm(true);
+    setSelectedPost(posts.find((post) => post.id === postId));
+  };
+
+  const handleClose = () => {
+    setShowForm(false);
+    setSelectedPost(null);
+  };
+
+  const handleTitleChange = () => {
+    console.log('title change');
+  };
+
+  const handleContentChange = () => {
+    console.log('content change');
+  };
+
   const filteredPosts = posts.filter((post) =>
     post.title.toLowerCase().includes(search.toLowerCase())
   );
@@ -24,13 +46,21 @@ function App() {
     <div>
       <Navbar />
       <section className="container">
-        <Search search={search} setSearch={setSearch} />
-        {filteredPosts.map((post) => (
-          <div key={post.id} className="post">
-            <h3>{post.title}</h3>
-            <p>{post.body}</p>
-          </div>
-        ))}
+        {!showForm ? (
+          <>
+            <Search search={search} setSearch={setSearch} />
+            {filteredPosts.map((post) => (
+              <Post key={post.id} post={post} handleShowForm={handleShowForm} />
+            ))}
+          </>
+        ) : (
+          <Form
+            selectedPost={selectedPost}
+            handleClose={handleClose}
+            handleContentChange={handleContentChange}
+            handleTitleChange={handleTitleChange}
+          />
+        )}
       </section>
     </div>
   );

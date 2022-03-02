@@ -1,0 +1,14 @@
+.post {
+  background-color: rgb(212, 241, 216);
+  width: 800px;
+  max-width: 95%;
+  border: 1px solid rgb(126, 124, 124);
+  border-radius: 5px;
+  margin: 1em;
+  padding: 1em;
+  cursor: pointer;
+}
+
+.post:hover {
+  background-color: rgb(166, 219, 173);
+}

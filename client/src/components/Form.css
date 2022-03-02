@@ -1,0 +1,43 @@
+.form {
+  background-color: rgb(212, 241, 216);
+  border: 1px solid black;
+  padding: 1.5em;
+  width: 400px;
+  position: relative;
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2em;
+}
+
+.form-fields textarea {
+  padding: 0.9em;
+  resize: none;
+  margin-bottom: 1.5em;
+}
+
+.form-fields label {
+  font-size: 1.2rem;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+
+.close-btn {
+  background-color: rgb(52, 86, 241);
+  margin: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background-color: rgb(74, 100, 219);
+}
