@@ -15,6 +15,12 @@
 .form-fields textarea {
   padding: 0.9em;
   resize: none;
+  height: 150px;
+  margin-bottom: 1.5em;
+}
+
+.form-fields input {
+  padding: 0.9em;
   margin-bottom: 1.5em;
 }
 
@@ -35,6 +41,14 @@
   text-align: center;
   width: 25px;
   height: 25px;
+  cursor: pointer;
+}
+
+.submit-btn {
+  background-color: rgb(52, 86, 241);
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
   cursor: pointer;
 }
 

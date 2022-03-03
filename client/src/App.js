@@ -30,12 +30,20 @@ function App() {
     setSelectedPost(null);
   };
 
-  const handleTitleChange = () => {
-    console.log('title change');
-  };
-
-  const handleContentChange = () => {
-    console.log('content change');
+  const handleSubmit = (event, id, title, body) => {
+    event.preventDefault();
+    let postToUpdate = posts.find((post) => post.id === id);
+    postToUpdate = { ...postToUpdate, title, body };
+    setPosts(
+      posts.map((post) => {
+        if (post.id === id) {
+          return postToUpdate;
+        }
+        return post;
+      })
+    );
+    setShowForm(false);
+    setSelectedPost(null);
   };
 
   const filteredPosts = posts.filter((post) =>
@@ -57,8 +65,7 @@ function App() {
           <Form
             selectedPost={selectedPost}
             handleClose={handleClose}
-            handleContentChange={handleContentChange}
-            handleTitleChange={handleTitleChange}
+            handleSubmit={handleSubmit}
           />
         )}
       </section>

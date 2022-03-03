@@ -1,6 +1,7 @@
 .navbar {
   padding: 1em;
-  background-color: rgb(52, 86, 241);
+  background-color: var(--main-primary);
+  color: white;
 }
 
 .container {

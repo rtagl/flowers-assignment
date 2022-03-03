@@ -1,9 +1,12 @@
+:root {
+  --main-primary: rgb(52, 86, 241);
+  --main-secondary: rgb(212, 241, 216);
+}
+
 body {
   margin: 0;
-  background-color: #d8efef;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  background-color: var(--main-secondary);
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   min-height: 100vh;

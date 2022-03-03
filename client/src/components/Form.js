@@ -1,12 +1,10 @@
-import React from 'react';
+import { useState } from 'react';
 import './Form.css';
 
-function Form({
-  selectedPost,
-  handleClose,
-  handleContentChange,
-  handleTitleChange,
-}) {
+function Form({ selectedPost, handleClose, handleSubmit }) {
+  const [title, setTitle] = useState(selectedPost.title);
+  const [body, setBody] = useState(selectedPost.body);
+
   return (
     <div className="form">
       <div className="close-btn" onClick={handleClose}>
@@ -14,23 +12,28 @@ function Form({
       </div>
       <form className="form-fields">
         <label id="title">Title:</label>
-        <textarea
+        <input
           type="text"
-          for="title"
           spellCheck="false"
-          value={selectedPost.title}
+          value={title}
           style={{ height: '50px' }}
-          onChange={handleTitleChange}
+          onChange={(e) => setTitle(e.target.value)}
         />
         <label id="content">Post:</label>
         <textarea
           type="text"
-          for="content"
           spellCheck="false"
-          value={selectedPost.body}
+          value={body}
           style={{ height: '150px' }}
-          onChange={handleContentChange}
+          onChange={(e) => setBody(e.target.value)}
         />
+        <button
+          className="submit-btn"
+          onClick={(event) =>
+            handleSubmit(event, selectedPost.id, title, body)
+          }>
+          Save
+        </button>
       </form>
     </div>
   );
