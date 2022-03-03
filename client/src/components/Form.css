@@ -1,9 +1,10 @@
 .form {
-  background-color: rgb(212, 241, 216);
+  background-color: var(--main-card-bg);
   border: 1px solid black;
   padding: 1.5em;
   width: 400px;
   position: relative;
+  border-radius: 5px;
 }
 
 .form-fields {
@@ -31,7 +32,7 @@
 }
 
 .close-btn {
-  background-color: rgb(52, 86, 241);
+  background-color: var(--main-primary);
   margin: 10px;
   position: absolute;
   top: 0;
@@ -50,8 +51,14 @@
   color: white;
   font-weight: 600;
   cursor: pointer;
+  border: none;
+  padding: 0.5em;
+}
+
+.submit-btn:hover {
+  background-color: var(--hover);
 }
 
 .close-btn:hover {
-  background-color: rgb(74, 100, 219);
+  background-color: var(--hover);
 }

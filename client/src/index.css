@@ -1,6 +1,8 @@
 :root {
   --main-primary: rgb(52, 86, 241);
   --main-secondary: rgb(212, 241, 216);
+  --hover: rgb(74, 100, 219);
+  --main-card-bg: rgb(238, 238, 238);
 }
 
 body {
