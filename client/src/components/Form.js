@@ -19,7 +19,7 @@ function Form({ selectedPost, handleClose, handleSubmit }) {
           style={{ height: '50px' }}
           onChange={(e) => setTitle(e.target.value)}
         />
-        <label id="content">Post:</label>
+        <label id="content">Content:</label>
         <textarea
           type="text"
           spellCheck="false"

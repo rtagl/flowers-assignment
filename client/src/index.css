@@ -1,8 +1,9 @@
 :root {
-  --main-primary: rgb(52, 86, 241);
-  --main-secondary: rgb(212, 241, 216);
-  --hover: rgb(74, 100, 219);
-  --main-card-bg: rgb(238, 238, 238);
+  --main-primary: #7e007b;
+  --main-secondary: rgb(234, 214, 241);
+  --hover: #9000b3;
+  --main-card-bg: #9987e9;
+  --main-card-bg-hover: #b3c2f2;
 }
 
 body {

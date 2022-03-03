@@ -1,5 +1,5 @@
 .post {
-  background-color: rgb(238, 238, 238);
+  background-color: var(--main-card-bg);
   width: 600px;
   max-width: 95%;
   border: 1px solid rgb(126, 124, 124);
@@ -16,6 +16,6 @@
 }
 
 .post:hover {
-  background-color: rgb(214, 214, 214);
+  background-color: var(--main-card-bg-hover);
   transform: scale(1.02);
 }
